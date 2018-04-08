@@ -9,8 +9,8 @@
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
-
+class SelectMichikusaViewController: UIViewController {
+    
     var mapView : GMSMapView!
     let latitude: CLLocationDegrees = 35.531064
     let longitude: CLLocationDegrees = 139.684389
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         // mapview の描画サイズ
         let width: CGFloat = self.view.frame.maxX
-        let height: CGFloat = self.view.frame.maxY - 10
+        let height: CGFloat = self.view.frame.maxY / 2.5
         
         let zoom: Float = 15
         
@@ -36,9 +36,9 @@ class ViewController: UIViewController {
         
         self.view.addSubview(mapView)
         self.view.sendSubview(toBack: mapView)
-                
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,7 +49,8 @@ class ViewController: UIViewController {
         let next = storyboard!.instantiateViewController(withIdentifier: "nextView")
         self.present(next, animated: true, completion: nil)
     }
-
-
+    
+    
 }
+
 

@@ -16,6 +16,9 @@
 		6461C579205E288B00ADE3BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6461C577205E288B00ADE3BE /* LaunchScreen.storyboard */; };
 		6461C584205E288B00ADE3BE /* michikusaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C583205E288B00ADE3BE /* michikusaTests.swift */; };
 		6461C58F205E288B00ADE3BE /* michikusaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C58E205E288B00ADE3BE /* michikusaUITests.swift */; };
+		64CB87542078B29000B13FE9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87532078B29000B13FE9 /* NextViewController.swift */; };
+		64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */; };
+		64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */; };
 		CFBAFC9EA829858DFDBA91CE /* Pods_michikusa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF5B77D3220271D7FF74CA6 /* Pods_michikusa.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		6461C58A205E288B00ADE3BE /* michikusaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = michikusaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6461C58E205E288B00ADE3BE /* michikusaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = michikusaUITests.swift; sourceTree = "<group>"; };
 		6461C590205E288B00ADE3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64CB87532078B29000B13FE9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeAndGenreViewController.swift; sourceTree = "<group>"; };
+		64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMichikusaViewController.swift; sourceTree = "<group>"; };
 		6A4E70FE0E2611A7FCA31F90 /* Pods-michikusaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-michikusaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-michikusaTests/Pods-michikusaTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E002ACF6704673D31284A7E /* Pods-michikusa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-michikusa.release.xcconfig"; path = "Pods/Target Support Files/Pods-michikusa/Pods-michikusa.release.xcconfig"; sourceTree = "<group>"; };
 		86890197DC8F67BCF28CF386 /* Pods_michikusaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_michikusaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,9 +133,12 @@
 				6461C56E205E288B00ADE3BE /* AppDelegate.swift */,
 				6461C570205E288B00ADE3BE /* ViewController.swift */,
 				6461C572205E288B00ADE3BE /* Main.storyboard */,
+				64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */,
+				64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */,
 				6461C575205E288B00ADE3BE /* Assets.xcassets */,
 				6461C577205E288B00ADE3BE /* LaunchScreen.storyboard */,
 				6461C57A205E288B00ADE3BE /* Info.plist */,
+				64CB87532078B29000B13FE9 /* NextViewController.swift */,
 			);
 			path = michikusa;
 			sourceTree = "<group>";
@@ -460,7 +469,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */,
 				6461C571205E288B00ADE3BE /* ViewController.swift in Sources */,
+				64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */,
+				64CB87542078B29000B13FE9 /* NextViewController.swift in Sources */,
 				6461C56F205E288B00ADE3BE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

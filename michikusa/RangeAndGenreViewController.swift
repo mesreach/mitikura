@@ -1,16 +1,14 @@
 //
-//  ViewController.swift
-//  michikusa
+// Copyright (c) 2018年, 玉越敬典.
+// All rights reserved.
 //
-//  Created by 玉越敬典 on 2018/03/18.
-//  Copyright © 2018年 玉越敬典. All rights reserved.
-//
+
 
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController {
-
+class RangeAndGenreViewController: UIViewController {
+    
     var mapView : GMSMapView!
     let latitude: CLLocationDegrees = 35.531064
     let longitude: CLLocationDegrees = 139.684389
@@ -20,7 +18,7 @@ class ViewController: UIViewController {
         
         // mapview の描画サイズ
         let width: CGFloat = self.view.frame.maxX
-        let height: CGFloat = self.view.frame.maxY - 10
+        let height: CGFloat = self.view.frame.maxY / 2.5
         
         let zoom: Float = 15
         
@@ -36,20 +34,20 @@ class ViewController: UIViewController {
         
         self.view.addSubview(mapView)
         self.view.sendSubview(toBack: mapView)
-                
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func goBack_(_ segue: UIStoryboardSegue) {}
     @IBAction func goNext_(_ sender: UIButton) {
-        let next = storyboard!.instantiateViewController(withIdentifier: "nextView")
+        let next = storyboard!.instantiateViewController(withIdentifier: "RangeAndGenre")
         self.present(next, animated: true, completion: nil)
     }
-
-
+    
+    
 }
+
 
