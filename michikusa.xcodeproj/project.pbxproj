@@ -17,6 +17,8 @@
 		6461C584205E288B00ADE3BE /* michikusaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C583205E288B00ADE3BE /* michikusaTests.swift */; };
 		6461C58F205E288B00ADE3BE /* michikusaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C58E205E288B00ADE3BE /* michikusaUITests.swift */; };
 		6469F5E920941C2900597B44 /* PickerKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469F5E820941C2900597B44 /* PickerKeyboard.swift */; };
+		6469F5EB20945A3900597B44 /* googlemap_webview.html in Resources */ = {isa = PBXBuildFile; fileRef = 6469F5EA20945A3900597B44 /* googlemap_webview.html */; };
+		6469F5ED2094607400597B44 /* googlemap_webview.js in Resources */ = {isa = PBXBuildFile; fileRef = 6469F5EC2094607400597B44 /* googlemap_webview.js */; };
 		64CB87542078B29000B13FE9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87532078B29000B13FE9 /* NextViewController.swift */; };
 		64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */; };
 		64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */; };
@@ -59,6 +61,8 @@
 		6461C58E205E288B00ADE3BE /* michikusaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = michikusaUITests.swift; sourceTree = "<group>"; };
 		6461C590205E288B00ADE3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6469F5E820941C2900597B44 /* PickerKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerKeyboard.swift; sourceTree = "<group>"; };
+		6469F5EA20945A3900597B44 /* googlemap_webview.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = googlemap_webview.html; sourceTree = "<group>"; };
+		6469F5EC2094607400597B44 /* googlemap_webview.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = googlemap_webview.js; sourceTree = "<group>"; };
 		64CB87532078B29000B13FE9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeAndGenreViewController.swift; sourceTree = "<group>"; };
 		64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMichikusaViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				6461C57A205E288B00ADE3BE /* Info.plist */,
 				64CB87532078B29000B13FE9 /* NextViewController.swift */,
 				6469F5E820941C2900597B44 /* PickerKeyboard.swift */,
+				6469F5EA20945A3900597B44 /* googlemap_webview.html */,
+				6469F5EC2094607400597B44 /* googlemap_webview.js */,
 			);
 			path = michikusa;
 			sourceTree = "<group>";
@@ -293,9 +299,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6469F5EB20945A3900597B44 /* googlemap_webview.html in Resources */,
 				6461C579205E288B00ADE3BE /* LaunchScreen.storyboard in Resources */,
 				6461C576205E288B00ADE3BE /* Assets.xcassets in Resources */,
 				6461C574205E288B00ADE3BE /* Main.storyboard in Resources */,
+				6469F5ED2094607400597B44 /* googlemap_webview.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
