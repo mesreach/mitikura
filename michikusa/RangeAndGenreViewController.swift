@@ -8,13 +8,18 @@ import UIKit
 import GoogleMaps
 
 class RangeAndGenreViewController: UIViewController {
-    
     var mapView : GMSMapView!
     let latitude: CLLocationDegrees = 35.531064
     let longitude: CLLocationDegrees = 139.684389
     
+    @IBOutlet weak var picker_genre: PickerKeyboard!
+    @IBOutlet weak var picker_km: PickerKeyboard!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker_genre.addData(d: ["hoge", "hage"])
+        picker_km.addData(d: ["1", "2", "3"])
         
         // mapview の描画サイズ
         let width: CGFloat = self.view.frame.maxX
@@ -34,20 +39,16 @@ class RangeAndGenreViewController: UIViewController {
         
         self.view.addSubview(mapView)
         self.view.sendSubview(toBack: mapView)
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func goNext_(_ sender: UIButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "RangeAndGenre")
         self.present(next, animated: true, completion: nil)
     }
-    
-    
 }
 
 

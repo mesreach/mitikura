@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let cGoogleMapsAPIKey = "AIzaSyABx0i_s4GW1KapXeiu4W7pDqSIatlGIsg"
+    let cGoogleMapsAPIKey = "AIzaSyB2VMdWQslynrxRgCA3vpWQAjqxvkKmCWk"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
