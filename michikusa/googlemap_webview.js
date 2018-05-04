@@ -39,11 +39,37 @@ function initMap() {
         destination: latlng2, 
         travelMode: google.maps.DirectionsTravelMode.DRIVING
     };
-
+    
     DS.route(request, function(result, status) {
         DR.setDirections(result); 
         DR.setMap(map); 
     });
+
+    let placeReq = {
+        location: latlng2,
+        radius: 5000 ,
+        type: ['cafe']
+    };
+
+    // PlaceServiceを宣言＆リクエスト
+    let PS = new google.maps.places.PlacesService(map);
+    PS.nearbySearch(placeReq,callback);
+
+    // PlaceServiceのリプライからMarkerを配置
+    function callback(results,status){
+        if (status == google.maps.places.PlacesServiceStatus.OK){
+            for (var i = 0; i < results.length; i++){
+                createMarker(results[i]);
+            }
+        }
+    }
+
+    function createMarker(place){
+        let marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location;
+        });
+    }
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -52,3 +78,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                           'Error: The Geolocation service failed.' :
                           'Error: Your browser doesn\'t support geolocation.');
 }
+
+
+
