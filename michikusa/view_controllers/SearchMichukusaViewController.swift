@@ -1,7 +1,7 @@
 import UIKit
 import GoogleMaps
 
-class NextViewController: UIViewController {
+class SearchMichukusaViewController: UIViewController {
     
     var mapView : GMSMapView!
     let latitude: CLLocationDegrees = 35.531064
