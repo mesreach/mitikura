@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +27,23 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSY-Zi-jOm" userLabel="Button" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="75" y="309" width="224" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Find Michikusa Spot!!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goNext_:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AXz-tK-yn0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -75,13 +93,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="どの辺で道草する" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9a-Lr-FO6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X0t-xw-EMO" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="467"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="pe5-YK-nE0">
                                 <rect key="frame" x="52" y="511" width="271" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -156,14 +171,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYb-1D-Ulg">
-                                <rect key="frame" x="126.5" y="632" width="122" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYb-1D-Ulg" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="126.5" y="622" width="122" height="35"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="button01"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="この辺で道草!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="goNext_:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTb-WU-IYB"/>
                                     <action selector="goNext_:" destination="B6l-fc-HJa" eventType="touchUpInside" id="quf-Ja-tbR"/>
@@ -172,10 +192,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="X0t-xw-EMO" firstAttribute="top" secondItem="Whf-Vm-DT1" secondAttribute="top" constant="20" id="6gM-eI-PSR"/>
+                            <constraint firstItem="X0t-xw-EMO" firstAttribute="width" secondItem="Whf-Vm-DT1" secondAttribute="width" id="boa-I9-fAa"/>
+                            <constraint firstAttribute="bottom" secondItem="IYb-1D-Ulg" secondAttribute="bottom" constant="10" id="dTW-hq-erH"/>
+                            <constraint firstItem="X0t-xw-EMO" firstAttribute="height" secondItem="Whf-Vm-DT1" secondAttribute="height" multiplier="0.7" id="dge-3u-FMP"/>
                             <constraint firstItem="IYb-1D-Ulg" firstAttribute="centerX" secondItem="Whf-Vm-DT1" secondAttribute="centerX" id="vMi-nz-4NK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FXH-73-B0I"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="X0t-xw-EMO" id="hbD-h5-Yq4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yiM-Fs-VGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,6 +216,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-zV-exR" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="道草範囲は？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDf-hK-KxG">
                                 <rect key="frame" x="157" y="371" width="104" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -207,6 +238,9 @@
                                 <rect key="frame" x="157" y="565" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="道草候補を表示！"/>
+                                <connections>
+                                    <action selector="goNext_:" destination="l43-uo-pLp" eventType="touchUpInside" id="TpA-Gs-HAc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="km 以内" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgk-Ut-QjL">
                                 <rect key="frame" x="241" y="418" width="63" height="21"/>
@@ -227,9 +261,15 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4QS-zV-exR" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="dUk-m6-hhR"/>
+                            <constraint firstItem="4QS-zV-exR" firstAttribute="height" secondItem="cv8-Sf-LNW" secondAttribute="height" multiplier="0.5" id="v3T-z4-yWS"/>
+                            <constraint firstItem="4QS-zV-exR" firstAttribute="top" secondItem="cv8-Sf-LNW" secondAttribute="top" id="xtx-uB-BK5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r4x-3G-McW"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="4QS-zV-exR" id="7j4-Ix-oLw"/>
                         <outlet property="picker_genre" destination="qIt-8B-vh3" id="bjV-0y-8za"/>
                         <outlet property="picker_km" destination="tTL-fs-3Y0" id="zJC-mN-msh"/>
                     </connections>
@@ -238,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="1608.8" y="106.59670164917542"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Michikusa View Controller-->
         <scene sceneID="iMI-ty-dx5">
             <objects>
-                <viewController id="0d2-Ju-2tI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectMichikusaView" id="0d2-Ju-2tI" customClass="SelectMichikusaViewController" customModule="michikusa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Fh-4F-28j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,19 +293,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lvP-k9-9z2">
-                                <rect key="frame" x="36" y="403" width="302" height="176"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C76-FG-Jim">
                                 <rect key="frame" x="153" y="559" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ここへ道草!"/>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
+                                <rect key="frame" x="59" y="504" width="256" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kzk-fg-bgy"/>
                     </view>
+                    <connections>
+                        <outlet property="michikusaSpot" destination="6Ez-w6-sCa" id="fem-rr-GIb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zh2-ze-KQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

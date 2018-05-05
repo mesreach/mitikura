@@ -71,7 +71,7 @@ class MainViewController: UIViewController {
         self.searchController.isActive = true
     }
     
-    @IBAction func goNext_(_ sender: UIButton) {
+    @IBAction func goNext_(_ sender: RaisedButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "searchMichikusaView")
         self.present(next, animated: true, completion: nil)
     }
