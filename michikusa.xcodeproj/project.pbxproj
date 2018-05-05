@@ -10,13 +10,14 @@
 		1F80CD789D419FA883C0019B /* Pods_michikusaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD0765B2DCF0A6226143079 /* Pods_michikusaTests.framework */; };
 		52994E85169AB5470210BC85 /* Pods_michikusaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86890197DC8F67BCF28CF386 /* Pods_michikusaUITests.framework */; };
 		6461C56F205E288B00ADE3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C56E205E288B00ADE3BE /* AppDelegate.swift */; };
-		6461C571205E288B00ADE3BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C570205E288B00ADE3BE /* ViewController.swift */; };
+		6461C571205E288B00ADE3BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C570205E288B00ADE3BE /* MainViewController.swift */; };
 		6461C574205E288B00ADE3BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6461C572205E288B00ADE3BE /* Main.storyboard */; };
 		6461C576205E288B00ADE3BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6461C575205E288B00ADE3BE /* Assets.xcassets */; };
 		6461C579205E288B00ADE3BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6461C577205E288B00ADE3BE /* LaunchScreen.storyboard */; };
 		6461C584205E288B00ADE3BE /* michikusaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C583205E288B00ADE3BE /* michikusaTests.swift */; };
 		6461C58F205E288B00ADE3BE /* michikusaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C58E205E288B00ADE3BE /* michikusaUITests.swift */; };
 		6469F5E920941C2900597B44 /* PickerKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6469F5E820941C2900597B44 /* PickerKeyboard.swift */; };
+		6469F5FF209D860B00597B44 /* PlaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6469F5FE209D860B00597B44 /* PlaceView.xib */; };
 		64CB87542078B29000B13FE9 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87532078B29000B13FE9 /* NextViewController.swift */; };
 		64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */; };
 		64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */; };
@@ -47,7 +48,7 @@
 		5AF5B77D3220271D7FF74CA6 /* Pods_michikusa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_michikusa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6461C56B205E288B00ADE3BE /* michikusa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = michikusa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6461C56E205E288B00ADE3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6461C570205E288B00ADE3BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6461C570205E288B00ADE3BE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6461C573205E288B00ADE3BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6461C575205E288B00ADE3BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6461C578205E288B00ADE3BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		6461C58E205E288B00ADE3BE /* michikusaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = michikusaUITests.swift; sourceTree = "<group>"; };
 		6461C590205E288B00ADE3BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6469F5E820941C2900597B44 /* PickerKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerKeyboard.swift; sourceTree = "<group>"; };
+		6469F5FE209D860B00597B44 /* PlaceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceView.xib; sourceTree = "<group>"; };
 		64CB87532078B29000B13FE9 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeAndGenreViewController.swift; sourceTree = "<group>"; };
 		64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMichikusaViewController.swift; sourceTree = "<group>"; };
@@ -132,16 +134,14 @@
 		6461C56D205E288B00ADE3BE /* michikusa */ = {
 			isa = PBXGroup;
 			children = (
+				6469F5F92099AC5A00597B44 /* views */,
+				6469F5F82099AC2300597B44 /* view_controllers */,
 				6461C56E205E288B00ADE3BE /* AppDelegate.swift */,
-				6461C570205E288B00ADE3BE /* ViewController.swift */,
 				6461C572205E288B00ADE3BE /* Main.storyboard */,
-				64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */,
-				64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */,
 				6461C575205E288B00ADE3BE /* Assets.xcassets */,
 				6461C577205E288B00ADE3BE /* LaunchScreen.storyboard */,
 				6461C57A205E288B00ADE3BE /* Info.plist */,
-				64CB87532078B29000B13FE9 /* NextViewController.swift */,
-				6469F5E820941C2900597B44 /* PickerKeyboard.swift */,
+				6469F5F72099ABBE00597B44 /* ui_controls */,
 			);
 			path = michikusa;
 			sourceTree = "<group>";
@@ -162,6 +162,33 @@
 				6461C590205E288B00ADE3BE /* Info.plist */,
 			);
 			path = michikusaUITests;
+			sourceTree = "<group>";
+		};
+		6469F5F72099ABBE00597B44 /* ui_controls */ = {
+			isa = PBXGroup;
+			children = (
+				6469F5E820941C2900597B44 /* PickerKeyboard.swift */,
+			);
+			path = ui_controls;
+			sourceTree = "<group>";
+		};
+		6469F5F82099AC2300597B44 /* view_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				64CB87532078B29000B13FE9 /* NextViewController.swift */,
+				64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */,
+				64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */,
+				6461C570205E288B00ADE3BE /* MainViewController.swift */,
+			);
+			path = view_controllers;
+			sourceTree = "<group>";
+		};
+		6469F5F92099AC5A00597B44 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				6469F5FE209D860B00597B44 /* PlaceView.xib */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		77AC9F9CFB330382887713DD /* Pods */ = {
@@ -295,6 +322,7 @@
 			files = (
 				6461C579205E288B00ADE3BE /* LaunchScreen.storyboard in Resources */,
 				6461C576205E288B00ADE3BE /* Assets.xcassets in Resources */,
+				6469F5FF209D860B00597B44 /* PlaceView.xib in Resources */,
 				6461C574205E288B00ADE3BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,9 +484,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-michikusa/Pods-michikusa-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -473,7 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */,
-				6461C571205E288B00ADE3BE /* ViewController.swift in Sources */,
+				6461C571205E288B00ADE3BE /* MainViewController.swift in Sources */,
 				64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */,
 				64CB87542078B29000B13FE9 /* NextViewController.swift in Sources */,
 				6469F5E920941C2900597B44 /* PickerKeyboard.swift in Sources */,

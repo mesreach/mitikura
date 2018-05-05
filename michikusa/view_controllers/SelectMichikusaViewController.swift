@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  michikusa
-//
-//  Created by 玉越敬典 on 2018/03/18.
-//  Copyright © 2018年 玉越敬典. All rights reserved.
-//
-
 import UIKit
 import GoogleMaps
 

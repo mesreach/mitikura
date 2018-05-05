@@ -8,6 +8,7 @@ target 'michikusa' do
   # Pods for michikusa
   pod 'GooglePlaces'
   pod 'GoogleMaps'
+  pod 'Material'
 
   target 'michikusaTests' do
     inherit! :search_paths
