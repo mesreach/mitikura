@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func goNext_(_ sender: UIButton) {
-        let next = storyboard!.instantiateViewController(withIdentifier: "nextView")
+        let next = storyboard!.instantiateViewController(withIdentifier: "searchMichikusaView")
         self.present(next, animated: true, completion: nil)
     }
 }

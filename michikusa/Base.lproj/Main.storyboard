@@ -70,7 +70,7 @@
         <!--Search Michukusa View Controller-->
         <scene sceneID="WhR-Bi-zax">
             <objects>
-                <viewController storyboardIdentifier="nextView" id="B6l-fc-HJa" customClass="SearchMichukusaViewController" customModule="michikusa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchMichikusaView" id="B6l-fc-HJa" customClass="SearchMichukusaViewController" customModule="michikusa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Whf-Vm-DT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
