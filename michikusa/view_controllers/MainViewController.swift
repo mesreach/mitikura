@@ -16,11 +16,13 @@ class MainViewController: UIViewController {
     var placesClient: GMSPlacesClient!
     var searchController = UISearchController(searchResultsController: nil)
     var dstPlace: GMSPlace?
+    var dstMarker: GMSMarker?
 
     let defaultLatitude: CLLocationDegrees = 35.531064
     let defaultLongitude: CLLocationDegrees = 139.684389
     var currentLocation: CLLocationCoordinate2D?
     var destLocation: CLLocationCoordinate2D!
+    var polyline: GMSPolyline?
 
     var data: [GMSAutocompletePrediction] = []
     
@@ -92,8 +94,12 @@ class MainViewController: UIViewController {
     
     @IBAction func goNext_(_ sender: RaisedButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "searchMichikusaView") as! SearchMichukusaViewController
-        let _ = next.view
-        next.mapView = self.mapView
+
+        let pl = self.polyline
+        pl?.map = nil
+        next.previousPolyLine = pl
+        next.previousMarker = self.dstMarker
+        next.previousCamera = self.mapView.camera
         
         self.present(next, animated: true, completion: nil)
     }
@@ -205,11 +211,11 @@ extension MainViewController {
             let position = CLLocationCoordinate2D(latitude: latlong.latitude,
                                                   longitude: latlong.longitude)
             self.destLocation = position
-            let marker = GMSMarker(position: position)
-            marker.title = place.name
-            marker.map = self.mapView
+            self.dstMarker = GMSMarker(position: position)
+            self.dstMarker!.title = place.name
+            self.dstMarker!.map = self.mapView
             self.mapView.animate(to: camera)
-            self.displayPlaceDetailed(place: place, marker: marker)
+            self.displayPlaceDetailed(place: place, marker: self.dstMarker!)
         })
     }
     
@@ -306,17 +312,17 @@ extension MainViewController: CLLocationManagerDelegate {
                 let routeOverviewPolyline = route["overview_polyline"].dictionary
                 let points = routeOverviewPolyline?["points"]?.stringValue
                 let path = GMSPath(fromEncodedPath: points!)
-                let polyline = GMSPolyline(path: path)
+                self.polyline = GMSPolyline(path: path)
                 let legs = route["legs"].arrayValue.last
                 distance = (legs!["distance"].dictionary?["value"]?.intValue)!
                 duration = (legs!["duration"].dictionary?["text"]?.stringValue)!
                 distanceText = (legs!["distance"].dictionary?["text"]?.stringValue)!
     
-                polyline.strokeWidth = 4
-                polyline.strokeColor = Color.indigo.darken1
-                polyline.title = "所要時間 \(duration), 距離: \(distanceText)"
-                polyline.isTappable = true
-                polyline.map = self.mapView
+                self.polyline!.strokeWidth = 4
+                self.polyline!.strokeColor = Color.indigo.darken1
+                self.polyline!.title = "所要時間 \(duration), 距離: \(distanceText)"
+                self.polyline!.isTappable = true
+                self.polyline!.map = self.mapView
             }
             
             let camera = GMSCameraPosition.camera(withTarget: mediumPoint, zoom: Float(self.getAppreciateZoomSize(distance: distance)))
