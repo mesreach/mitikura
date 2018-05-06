@@ -90,6 +90,13 @@ class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         self.searchController.isActive = true
+        if self.polyline != nil {
+            self.polyline!.map = self.mapView
+        }
+        
+        if self.dstMarker != nil {
+            self.dstMarker!.map = self.mapView
+        }
     }
     
     @IBAction func goNext_(_ sender: RaisedButton) {
@@ -340,17 +347,20 @@ extension MainViewController: CLLocationManagerDelegate {
     }
     
     func getAppreciateZoomSize(distance: Int) -> Int {
+        print(distance)
         switch distance {
         case 1..<1000:
-            return 18
+            return 16
         case 1000..<5000:
-            return 15
+            return 13
         case 5000..<10000:
-            return 14
-        case 10000..<20000:
-            return 12
-        case 20000..<50000:
             return 11
+        case 10000..<20000:
+            return 10
+        case 20000..<50000:
+            return 7
+        case 50000..<Int.max:
+            return 7
         default:
             return 10
         }

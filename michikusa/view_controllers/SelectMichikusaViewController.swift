@@ -12,4 +12,8 @@ class SelectMichikusaViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

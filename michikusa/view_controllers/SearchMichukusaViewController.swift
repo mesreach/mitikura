@@ -29,8 +29,27 @@ class SearchMichukusaViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        if self.previousPolyLine != nil {
+            self.previousPolyLine!.map = self.mapView
+        }
+        
+        if self.previousMarker != nil {
+            self.previousMarker!.map = self.mapView
+        }
+    }
+    
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func goNext_(_ sender: UIButton) {
-        let next = storyboard!.instantiateViewController(withIdentifier: "RangeAndGenre")
+        let next = storyboard!.instantiateViewController(withIdentifier: "RangeAndGenre") as! RangeAndGenreViewController
+        let pl = self.previousPolyLine
+        pl?.map = nil
+        next.previousPolyLine = pl
+        next.previousMarker = self.previousMarker
+        next.previousCamera = self.mapView.camera
         self.present(next, animated: true, completion: nil)
     }
 }
