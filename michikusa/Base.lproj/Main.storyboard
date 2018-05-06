@@ -27,9 +27,8 @@
                                 <rect key="frame" x="0.0" y="30" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSY-Zi-jOm" userLabel="Button" customClass="RaisedButton" customModule="Material">
-                                <rect key="frame" x="75" y="309" width="224" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSY-Zi-jOm" userLabel="Button" customClass="RaisedButton" customModule="Material">
+                                <rect key="frame" x="93" y="531" width="188" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Find Michikusa Spot!!">
@@ -37,7 +36,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                        <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -48,13 +47,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xlc-We-ptc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="3fF-ts-mnO"/>
+                            <constraint firstItem="PSY-Zi-jOm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MrR-AN-9SP"/>
                             <constraint firstItem="KNX-4b-ra4" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dKi-5D-YvM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PSY-Zi-jOm" secondAttribute="bottom" constant="100" id="vEh-S0-fCH"/>
                             <constraint firstItem="Xlc-We-ptc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="wK0-y5-amJ"/>
                             <constraint firstItem="KNX-4b-ra4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wel-23-A3y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="findMichikusaButton" destination="PSY-Zi-jOm" id="n0O-JL-H6O"/>
                         <outlet property="mapView" destination="Xlc-We-ptc" id="Xjk-nL-7y8"/>
                         <outlet property="searchBar" destination="KNX-4b-ra4" id="0eK-iU-oTv"/>
                     </connections>

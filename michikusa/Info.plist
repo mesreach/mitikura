@@ -21,7 +21,17 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>hoge</string>
+	<string>位置情報の記録に必要です。</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>位置情報の記録に必要です。</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>位置情報の記録に必要です。</string>
+	<key>NSLocationUsageDescription</key>
+	<string>位置情報の記録に必要です。</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

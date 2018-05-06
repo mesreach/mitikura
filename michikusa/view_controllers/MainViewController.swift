@@ -2,11 +2,14 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import Material
+import Alamofire
+import SwiftyJSON
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var findMichikusaButton: RaisedButton!
 
     var tableView: UITableView!
     var fetcher: GMSAutocompleteFetcher!
@@ -14,10 +17,14 @@ class MainViewController: UIViewController {
     var searchController = UISearchController(searchResultsController: nil)
     var dstPlace: GMSPlace?
 
-    let latitude: CLLocationDegrees = 35.531064
-    let longitude: CLLocationDegrees = 139.684389
+    let defaultLatitude: CLLocationDegrees = 35.531064
+    let defaultLongitude: CLLocationDegrees = 139.684389
+    var currentLocation: CLLocationCoordinate2D?
+    var destLocation: CLLocationCoordinate2D!
 
     var data: [GMSAutocompletePrediction] = []
+    
+    var locationManager: CLLocationManager!
 
     fileprivate var card: Card!
     fileprivate var toolbar: Toolbar!
@@ -26,18 +33,30 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Location Manager Settings
+        self.locationManager = CLLocationManager()
+        self.locationManager.delegate = self
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.startUpdatingLocation()
+
+        if self.currentLocation == nil {
+            self.currentLocation = CLLocationCoordinate2D(latitude: defaultLatitude, longitude: defaultLongitude)
+        }
         
         // GMSMapVIew Settings
         let zoom: Float = 15
-        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: latitude,
-                                                                 longitude: longitude,
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: (self.currentLocation?.latitude)!,
+                                                                 longitude: (self.currentLocation?.longitude)!,
                                                                  zoom: zoom)
         
         self.mapView.camera = camera
         self.mapView.settings.myLocationButton = true
         self.mapView.isMyLocationEnabled = true
+        
         self.placesClient = GMSPlacesClient.shared()
-
+        
         // TableView Settings
         let y = self.searchBar.frame.origin.y + self.searchBar.frame.height
         
@@ -72,7 +91,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func goNext_(_ sender: RaisedButton) {
-        let next = storyboard!.instantiateViewController(withIdentifier: "searchMichikusaView")
+        let next = storyboard!.instantiateViewController(withIdentifier: "searchMichikusaView") as! SearchMichukusaViewController
+        let _ = next.view
+        next.mapView = self.mapView
+        
         self.present(next, animated: true, completion: nil)
     }
 }
@@ -81,6 +103,7 @@ extension MainViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.mapView.isHidden = true
         self.tableView.isHidden = false
+        self.findMichikusaButton.isHidden = true
         self.view.sendSubview(toBack: self.mapView)
         self.view.bringSubview(toFront: self.tableView)
         
@@ -99,11 +122,14 @@ extension MainViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         searchBar.text = nil
         searchBar.setShowsCancelButton(false, animated: true)
+        self.findMichikusaButton.isHidden = true
         self.mapView.isHidden = false
         self.tableView.isHidden = true
         self.view.sendSubview(toBack: self.tableView)
         self.mapView.clear()
-        self.card.removeFromSuperview()
+        if let tmp = self.card {
+            tmp.removeFromSuperview()
+        }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -178,6 +204,7 @@ extension MainViewController {
                                                   zoom: 15)
             let position = CLLocationCoordinate2D(latitude: latlong.latitude,
                                                   longitude: latlong.longitude)
+            self.destLocation = position
             let marker = GMSMarker(position: position)
             marker.title = place.name
             marker.map = self.mapView
@@ -228,7 +255,8 @@ extension MainViewController {
         let button = RaisedButton(title: "Find Route!", titleColor: .white)
         button.pulseColor = .white
         button.backgroundColor = Color.blue.base
-        
+        button.addTarget(self, action: #selector(MainViewController.showDirection(sender:)), for: .touchUpInside)
+
         bottomBar.centerViews = [button]
     }
 
@@ -248,5 +276,78 @@ extension MainViewController: GMSAutocompleteFetcherDelegate {
     
     func didFailAutocompleteWithError(_ error: Error) {
         // TODO
+    }
+}
+
+extension MainViewController: CLLocationManagerDelegate {
+    @objc func showDirection(sender: UIButton) {
+        self.card.removeFromSuperview()
+        self.findMichikusaButton.isHidden = false
+        
+        drawPath(startLocation: self.currentLocation!, endLocation: self.destLocation)
+    }
+
+    func drawPath(startLocation: CLLocationCoordinate2D, endLocation: CLLocationCoordinate2D) {
+        let origin = "\(startLocation.latitude),\(startLocation.longitude)"
+        let destination = "\(endLocation.latitude),\(endLocation.longitude)"
+        let mediumPoint = CLLocationCoordinate2D(latitude: (startLocation.latitude + endLocation.latitude) / 2,
+                                                 longitude: (startLocation.longitude + endLocation.longitude) / 2)
+        
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving"
+        Alamofire.request(url).responseJSON { response in
+            let json = try! JSON(data: response.data!)
+            let routes = json["routes"].arrayValue
+            print("routes count: \(routes.count)")
+            var duration: String = ""
+            var distanceText: String = ""
+            var distance: Int = 0
+            
+            for route in routes {
+                let routeOverviewPolyline = route["overview_polyline"].dictionary
+                let points = routeOverviewPolyline?["points"]?.stringValue
+                let path = GMSPath(fromEncodedPath: points!)
+                let polyline = GMSPolyline(path: path)
+                let legs = route["legs"].arrayValue.last
+                distance = (legs!["distance"].dictionary?["value"]?.intValue)!
+                duration = (legs!["duration"].dictionary?["text"]?.stringValue)!
+                distanceText = (legs!["distance"].dictionary?["text"]?.stringValue)!
+    
+                polyline.strokeWidth = 4
+                polyline.strokeColor = Color.indigo.darken1
+                polyline.title = "所要時間 \(duration), 距離: \(distanceText)"
+                polyline.isTappable = true
+                polyline.map = self.mapView
+            }
+            
+            let camera = GMSCameraPosition.camera(withTarget: mediumPoint, zoom: Float(self.getAppreciateZoomSize(distance: distance)))
+            self.mapView.camera = camera
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last
+        self.currentLocation = location?.coordinate
+        let camera = GMSCameraPosition.camera(withLatitude: (self.currentLocation?.latitude)!,
+                                              longitude: (self.currentLocation?.longitude)!,
+                                              zoom: 15)
+        self.mapView.animate(to: camera)
+    }
+    
+    func getAppreciateZoomSize(distance: Int) -> Int {
+        switch distance {
+        case 1..<1000:
+            return 18
+        case 1000..<5000:
+            return 15
+        case 5000..<10000:
+            return 14
+        case 10000..<20000:
+            return 12
+        case 20000..<50000:
+            return 11
+        default:
+            return 10
+        }
+        
     }
 }

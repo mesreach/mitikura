@@ -9,6 +9,8 @@ target 'michikusa' do
   pod 'GooglePlaces'
   pod 'GoogleMaps'
   pod 'Material'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   target 'michikusaTests' do
     inherit! :search_paths
