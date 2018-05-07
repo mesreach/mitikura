@@ -22,6 +22,8 @@ class MainViewController: UIViewController {
     let defaultLongitude: CLLocationDegrees = 139.684389
     var currentLocation: CLLocationCoordinate2D?
     var destLocation: CLLocationCoordinate2D!
+    var destDuration: Double = 0
+    var destDistance: Double = 0
     var polyline: GMSPolyline?
 
     var data: [GMSAutocompletePrediction] = []
@@ -107,6 +109,8 @@ class MainViewController: UIViewController {
         next.previousPolyLine = pl
         next.previousMarker = self.dstMarker
         next.previousCamera = self.mapView.camera
+        next.previousDestDuration = self.destDuration
+        next.previousDestDistance = self.destDistance
         
         self.present(next, animated: true, completion: nil)
     }
@@ -311,9 +315,10 @@ extension MainViewController: CLLocationManagerDelegate {
             let json = try! JSON(data: response.data!)
             let routes = json["routes"].arrayValue
             print("routes count: \(routes.count)")
-            var duration: String = ""
+            var durationText: String = ""
             var distanceText: String = ""
-            var distance: Int = 0
+            var distance: Double = 0
+            var duration: Double = 0
             
             for route in routes {
                 let routeOverviewPolyline = route["overview_polyline"].dictionary
@@ -321,13 +326,16 @@ extension MainViewController: CLLocationManagerDelegate {
                 let path = GMSPath(fromEncodedPath: points!)
                 self.polyline = GMSPolyline(path: path)
                 let legs = route["legs"].arrayValue.last
-                distance = (legs!["distance"].dictionary?["value"]?.intValue)!
-                duration = (legs!["duration"].dictionary?["text"]?.stringValue)!
+                distance = (legs!["distance"].dictionary?["value"]?.doubleValue)!
+                duration = (legs!["duration"].dictionary?["value"]?.doubleValue)!
+                durationText = (legs!["duration"].dictionary?["text"]?.stringValue)!
                 distanceText = (legs!["distance"].dictionary?["text"]?.stringValue)!
-    
+                
+                self.destDuration = duration
+                self.destDistance = distance
                 self.polyline!.strokeWidth = 4
                 self.polyline!.strokeColor = Color.indigo.darken1
-                self.polyline!.title = "所要時間 \(duration), 距離: \(distanceText)"
+                self.polyline!.title = "所要時間 \(durationText), 距離: \(distanceText)"
                 self.polyline!.isTappable = true
                 self.polyline!.map = self.mapView
             }
@@ -346,7 +354,7 @@ extension MainViewController: CLLocationManagerDelegate {
         self.mapView.animate(to: camera)
     }
     
-    func getAppreciateZoomSize(distance: Int) -> Int {
+    func getAppreciateZoomSize(distance: Double) -> Int {
         print(distance)
         switch distance {
         case 1..<1000:
@@ -359,7 +367,7 @@ extension MainViewController: CLLocationManagerDelegate {
             return 10
         case 20000..<50000:
             return 7
-        case 50000..<Int.max:
+        case 50000..<1000000000000:
             return 7
         default:
             return 10
