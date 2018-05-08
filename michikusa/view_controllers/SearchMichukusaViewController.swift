@@ -54,10 +54,11 @@ class SearchMichukusaViewController: UIViewController {
     }
     
     func setKMandTMLabel(_ rangeSlider: RangeSlider){
-        self.startKM.text = "\(self.previousDestDistance * rangeSlider.lowerValue)"
-        self.endKM.text = "\(self.previousDestDistance * rangeSlider.upperValue)"
-        self.startTM.text = "\(self.previousDestDuration * rangeSlider.lowerValue)"
-        self.endTM.text = "\(self.previousDestDuration * rangeSlider.upperValue)"
+        print(self.previousDestDistance)
+        self.startKM.text = SearchMichikusaDecorator.decorate(self.previousDestDistance * rangeSlider.lowerValue, tp: "km")
+        self.endKM.text = SearchMichikusaDecorator.decorate(self.previousDestDistance * rangeSlider.upperValue, tp: "km")
+        self.startTM.text = SearchMichikusaDecorator.decorate(self.previousDestDuration * rangeSlider.lowerValue, tp: "tm")
+        self.endTM.text = SearchMichikusaDecorator.decorate(self.previousDestDuration * rangeSlider.upperValue, tp: "tm")
     }
     
     override func viewDidAppear(_ animated: Bool) {
