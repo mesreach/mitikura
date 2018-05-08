@@ -118,6 +118,7 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.mapView.clear()
         self.mapView.isHidden = true
         self.tableView.isHidden = false
         self.findMichikusaButton.isHidden = true
@@ -136,8 +137,20 @@ extension MainViewController: UISearchBarDelegate {
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetView(searchBar)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if self.searchBar.text!.isEmpty {
+            resetView(searchBar)
+        } else {
+            searchBar.resignFirstResponder()
+            searchBar.setShowsCancelButton(false, animated: true)
+        }
+    }
+    
+    func resetView(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        searchBar.text = nil
         searchBar.setShowsCancelButton(false, animated: true)
         self.findMichikusaButton.isHidden = true
         self.mapView.isHidden = false
@@ -147,11 +160,6 @@ extension MainViewController: UISearchBarDelegate {
         if let tmp = self.card {
             tmp.removeFromSuperview()
         }
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        searchBar.setShowsCancelButton(false, animated: true)
     }
 }
 
@@ -352,6 +360,7 @@ extension MainViewController: CLLocationManagerDelegate {
                                               longitude: (self.currentLocation?.longitude)!,
                                               zoom: 15)
         self.mapView.animate(to: camera)
+        self.locationManager.stopUpdatingLocation()
     }
     
     func getAppreciateZoomSize(distance: Double) -> Int {
