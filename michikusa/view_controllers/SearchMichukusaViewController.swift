@@ -76,7 +76,7 @@ class SearchMichukusaViewController: UIViewController {
     }
     
     @IBAction func goNext_(_ sender: UIButton) {
-        let next = storyboard!.instantiateViewController(withIdentifier: "RangeAndGenre") as! RangeAndGenreViewController
+        let next = storyboard!.instantiateViewController(withIdentifier: "SetRange") as! SetRangeViewController
         let pl = self.previousPolyLine
         pl?.map = nil
         next.previousPolyLine = pl

@@ -1,7 +1,7 @@
 import UIKit
 import GoogleMaps
 
-class RangeAndGenreViewController: UIViewController {
+class SetRangeViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     let latitude: CLLocationDegrees = 35.531064
@@ -11,13 +11,11 @@ class RangeAndGenreViewController: UIViewController {
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
     
-    @IBOutlet weak var picker_genre: PickerKeyboard!
     @IBOutlet weak var picker_km: PickerKeyboard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        picker_genre.addData(d: ["hoge", "hage"])
         picker_km.addData(d: ["1", "2", "3"])
         
         if let tmp = self.previousCamera {
