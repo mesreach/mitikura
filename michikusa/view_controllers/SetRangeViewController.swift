@@ -10,6 +10,7 @@ class SetRangeViewController: UIViewController {
     var previousPolyLine: GMSPolyline?
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
+    var previousLimitPolyLine: GMSPolyline?
     
     @IBOutlet weak var picker_km: PickerKeyboard!
     
@@ -21,6 +22,7 @@ class SetRangeViewController: UIViewController {
         if let tmp = self.previousCamera {
             self.mapView.camera = tmp
         }
+
         if self.previousPolyLine != nil {
             self.previousPolyLine!.map = self.mapView
         }
@@ -28,6 +30,11 @@ class SetRangeViewController: UIViewController {
         if self.previousMarker != nil {
             self.previousMarker!.map = self.mapView
         }
+        
+        if self.previousLimitPolyLine != nil {
+            self.previousLimitPolyLine!.map = self.mapView
+        }
+        
         self.mapView.settings.myLocationButton = true
         self.mapView.isMyLocationEnabled = true
     }
@@ -43,6 +50,10 @@ class SetRangeViewController: UIViewController {
         
         if self.previousMarker != nil {
             self.previousMarker!.map = self.mapView
+        }
+        
+        if self.previousLimitPolyLine != nil {
+            self.previousLimitPolyLine!.map = self.mapView
         }
     }
     

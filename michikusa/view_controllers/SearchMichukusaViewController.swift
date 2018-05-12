@@ -13,6 +13,9 @@ class SearchMichukusaViewController: UIViewController {
     var previousMarker: GMSMarker?
     var previousDestDuration: Double = 0
     var previousDestDistance: Double = 0
+    var limitMutablePath: GMSMutablePath?
+    var originalMutablePath: GMSMutablePath?
+    var limitPolyLine: GMSPolyline?
     let rangeSlider = RangeSlider(frame: CGRect.zero)
     
     override func viewDidLoad() {
@@ -28,6 +31,7 @@ class SearchMichukusaViewController: UIViewController {
         if self.previousMarker != nil {
             self.previousMarker!.map = self.mapView
         }
+        
         self.mapView.settings.myLocationButton = true
         self.mapView.isMyLocationEnabled = true
 
@@ -54,11 +58,27 @@ class SearchMichukusaViewController: UIViewController {
     }
     
     func setKMandTMLabel(_ rangeSlider: RangeSlider){
-        print(self.previousDestDistance)
         self.startKM.text = SearchMichikusaDecorator.decorate(self.previousDestDistance * rangeSlider.lowerValue, tp: "km")
         self.endKM.text = SearchMichikusaDecorator.decorate(self.previousDestDistance * rangeSlider.upperValue, tp: "km")
         self.startTM.text = SearchMichikusaDecorator.decorate(self.previousDestDuration * rangeSlider.lowerValue, tp: "tm")
         self.endTM.text = SearchMichikusaDecorator.decorate(self.previousDestDuration * rangeSlider.upperValue, tp: "tm")
+        
+        let count = Double((self.originalMutablePath?.count())!)
+        let lstartno = Int(rangeSlider.lowerValue * count)
+        let lendno = Int(rangeSlider.upperValue * count)
+        
+        self.mapView.clear()
+        self.previousMarker!.map = self.mapView
+        self.previousPolyLine!.map = self.mapView
+
+        self.limitMutablePath = self.originalMutablePath?.mutableCopy() as? GMSMutablePath
+        Array(0..<lstartno).forEach { i in self.limitMutablePath?.removeCoordinate(at: 0) }
+        Array((lendno - lstartno)..<(Int(count) - lstartno)).forEach { i in self.limitMutablePath?.removeLastCoordinate() }
+        self.limitPolyLine = GMSPolyline(path: self.limitMutablePath)
+        self.limitPolyLine?.strokeWidth = 6
+        self.limitPolyLine?.strokeColor = UIColor.red
+
+        self.limitPolyLine?.map = self.mapView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +89,8 @@ class SearchMichukusaViewController: UIViewController {
         if self.previousMarker != nil {
             self.previousMarker!.map = self.mapView
         }
+        
+        setKMandTMLabel(self.rangeSlider)
     }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
@@ -82,6 +104,7 @@ class SearchMichukusaViewController: UIViewController {
         next.previousPolyLine = pl
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
+        next.previousLimitPolyLine = self.limitPolyLine
         self.present(next, animated: true, completion: nil)
     }
 }
