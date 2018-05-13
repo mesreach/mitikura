@@ -3,7 +3,8 @@ import UIKit
 class PickerKeyboard: UIControl {
     
     var data: [String] = ["Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sut.", "Sun."]
-    fileprivate var textStore: String = ""
+    let button: UIButton = UIButton(type: .system)
+    var textStore: String = ""
     
     override func draw(_ rect: CGRect) {
         UIColor.black.set()
@@ -45,7 +46,6 @@ class PickerKeyboard: UIControl {
     }
     
     override var inputAccessoryView: UIView? {
-        let button = UIButton(type: .system)
         button.setTitle("Done", for: .normal)
         button.addTarget(self, action: #selector(didTapDone(sender:)), for: .touchUpInside)
         button.sizeToFit()

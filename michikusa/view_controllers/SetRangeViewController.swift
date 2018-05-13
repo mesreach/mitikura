@@ -17,26 +17,24 @@ class SetRangeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        picker_km.addData(d: ["1", "2", "3"])
+        picker_km.addData(d: Array(1...10).map({ "\($0)" }))
+        picker_km.textStore = "1"
+        picker_km.button.addTarget(self, action: #selector(didTapDone(sender:)), for: .touchUpInside)
         
         if let tmp = self.previousCamera {
             self.mapView.camera = tmp
         }
-
-        if self.previousPolyLine != nil {
-            self.previousPolyLine!.map = self.mapView
-        }
         
-        if self.previousMarker != nil {
-            self.previousMarker!.map = self.mapView
-        }
-        
-        if self.previousLimitPolyLine != nil {
-            self.previousLimitPolyLine!.map = self.mapView
-        }
+        drawMap()
         
         self.mapView.settings.myLocationButton = true
         self.mapView.isMyLocationEnabled = true
+        
+        drawMichikusaRange(Int(picker_km.textStore)! * 1000)
+    }
+    
+    @objc func didTapDone(sender: Any) {
+        drawMichikusaRange(Int(picker_km.textStore)! * 1000)
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,17 +42,7 @@ class SetRangeViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if self.previousPolyLine != nil {
-            self.previousPolyLine!.map = self.mapView
-        }
-        
-        if self.previousMarker != nil {
-            self.previousMarker!.map = self.mapView
-        }
-        
-        if self.previousLimitPolyLine != nil {
-            self.previousLimitPolyLine!.map = self.mapView
-        }
+        drawMap()
     }
     
     @IBAction func goBack(_ sender: UIBarButtonItem) {
@@ -64,5 +52,37 @@ class SetRangeViewController: UIViewController {
     @IBAction func goNext_(_ sender: UIButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "selectMichikusaView")
         self.present(next, animated: true, completion: nil)
+    }
+    
+    func drawMap() {
+        if self.previousPolyLine != nil {
+            self.previousPolyLine!.map = self.mapView
+        }
+        
+        if self.previousMarker != nil {
+            self.previousMarker!.map = self.mapView
+        }
+        
+        if self.previousLimitPolyLine != nil {
+            self.previousLimitPolyLine!.map = self.mapView
+        }
+    }
+    
+    func drawMichikusaRange(_ range_m_radius: Int) {
+        var p: CLLocationCoordinate2D
+        let count = (self.previousLimitPolyLine?.path?.count())!
+        self.mapView.clear()
+        drawMap()
+
+        let v = UInt(self.picker_km.textStore)! * 3
+        for i in 0..<count {
+            if i % v == 0 {
+                p = (self.previousLimitPolyLine?.path?.coordinate(at: i))!
+                let c = GMSCircle(position: p, radius: CLLocationDistance(range_m_radius))
+                c.fillColor = UIColor.red.withAlphaComponent(0.1)
+                c.strokeColor = UIColor.red.withAlphaComponent(0.1)
+                c.map = self.mapView
+            }
+        }
     }
 }
