@@ -309,11 +309,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZw-AA-UZi" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="333.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kzk-fg-bgy"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="AZw-AA-UZi" id="ZLy-UR-UjN"/>
                         <outlet property="michikusaSpot" destination="6Ez-w6-sCa" id="fem-rr-GIb"/>
                     </connections>
                 </viewController>
