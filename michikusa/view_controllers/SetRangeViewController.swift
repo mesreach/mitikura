@@ -50,8 +50,15 @@ class SetRangeViewController: UIViewController {
     }
 
     @IBAction func goNext_(_ sender: UIButton) {
-        let next = storyboard!.instantiateViewController(withIdentifier: "selectMichikusaView")
+        let next = storyboard!.instantiateViewController(withIdentifier: "selectMichikusaView") as! SelectMichikusaViewController
+        //次画面への引数
+        print ("Picker_km:\(Int(picker_km.textStore)!)")
+        next.michikusaRange = Int(picker_km.textStore)!
+        print ("michikusaRange:\(next.michikusaRange!)")
+        next.previousMarker = self.previousMarker
+        next.previousCamera = self.mapView.camera
         self.present(next, animated: true, completion: nil)
+        
     }
     
     func drawMap() {
