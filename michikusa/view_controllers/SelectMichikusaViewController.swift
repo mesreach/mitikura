@@ -6,18 +6,17 @@ import SwiftyJSON
 
 class SelectMichikusaViewController: UIViewController {
     
-    @IBOutlet weak var michikusaSpot: PickerKeyboard!
     @IBOutlet weak var mapView: GMSMapView!
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
     var michikusaRange: Int?
-    var data:[String] = ["hoge", "hage"]
-
+    var michikusaType: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.michikusaSpot.addData(d: self.data)
+
         //GooglePlace検索＆マップ表示
-        getPlaceList(location:self.previousMarker!.position, range:michikusaRange! ,mapView:mapView)
+        getPlaceList(location:self.previousMarker!.position, range:michikusaRange! ,type:michikusaType! ,mapView:mapView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,21 +27,20 @@ class SelectMichikusaViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func getPlaceList (location: CLLocationCoordinate2D, range:Int, mapView:GMSMapView) {
+    func getPlaceList (location: CLLocationCoordinate2D, range:Int, type:String,mapView:GMSMapView) {
         let centerPoint = "\(location.latitude),\(location.longitude)"
         let range:Double = Double(1000 * range)
-        let type = "cafe"
         let key = "AIzaSyB2VMdWQslynrxRgCA3vpWQAjqxvkKmCWk"
         let url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
         
-        Alamofire.request(url,parameters:["key":key, "location":centerPoint, "radius":range,"type":type]).responseJSON { response in
+        Alamofire.request(url,parameters:["key":key, "location":centerPoint, "radius":range, "type":type]).responseJSON { response in
             let json = JSON(response.result.value!)
             json["results"].forEach{(_,place) in
-                let name = place["name"].string!
-                print (name)
                 let placeLat = place["geometry"]["location"]["lat"].doubleValue
                 let placeLng = place["geometry"]["location"]["lng"].doubleValue
                 let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: placeLat, longitude: placeLng))
+                marker.title = place["name"].string
+                marker.snippet = place["formatted_address"].string
                 marker.map = mapView
             }
             let camera = GMSCameraPosition.camera(withTarget: location, zoom: Float(self.getAppreciateZoomSize(distance: range)))

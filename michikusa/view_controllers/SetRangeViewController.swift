@@ -2,7 +2,9 @@ import UIKit
 import GoogleMaps
 
 class SetRangeViewController: UIViewController {
+
     
+    @IBOutlet weak var michikusaType: PickerKeyboard!
     @IBOutlet weak var mapView: GMSMapView!
     let latitude: CLLocationDegrees = 35.531064
     let longitude: CLLocationDegrees = 139.684389
@@ -11,11 +13,13 @@ class SetRangeViewController: UIViewController {
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
     var previousLimitPolyLine: GMSPolyline?
-    
+    var typeList:[String] = ["cafe","store","bar"]
     @IBOutlet weak var picker_km: PickerKeyboard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.michikusaType.addData(d: self.typeList)
+        self.michikusaType.textStore = "cafe"
         
         picker_km.addData(d: Array(1...10).map({ "\($0)" }))
         picker_km.textStore = "1"
@@ -57,6 +61,7 @@ class SetRangeViewController: UIViewController {
         print ("michikusaRange:\(next.michikusaRange!)")
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
+        next.michikusaType = self.michikusaType.textStore
         self.present(next, animated: true, completion: nil)
         
     }
