@@ -13,7 +13,7 @@ class SetRangeViewController: UIViewController {
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
     var previousLimitPolyLine: GMSPolyline?
-    var typeList:[String] = ["cafe","store","bar"]
+    var typeList:[String] = ["cafe","store","bar","park","museum"]
     @IBOutlet weak var picker_km: PickerKeyboard!
     
     override func viewDidLoad() {
@@ -56,9 +56,7 @@ class SetRangeViewController: UIViewController {
     @IBAction func goNext_(_ sender: UIButton) {
         let next = storyboard!.instantiateViewController(withIdentifier: "selectMichikusaView") as! SelectMichikusaViewController
         //次画面への引数
-        print ("Picker_km:\(Int(picker_km.textStore)!)")
         next.michikusaRange = Int(picker_km.textStore)!
-        print ("michikusaRange:\(next.michikusaRange!)")
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
         next.michikusaType = self.michikusaType.textStore

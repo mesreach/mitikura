@@ -14,6 +14,7 @@ class SelectMichikusaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mapView.camera = previousCamera!
 
         //GooglePlace検索＆マップ表示
         getPlaceList(location:self.previousMarker!.position, range:michikusaRange! ,type:michikusaType! ,mapView:mapView)
@@ -38,10 +39,10 @@ class SelectMichikusaViewController: UIViewController {
             json["results"].forEach{(_,place) in
                 let placeLat = place["geometry"]["location"]["lat"].doubleValue
                 let placeLng = place["geometry"]["location"]["lng"].doubleValue
-                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: placeLat, longitude: placeLng))
-                marker.title = place["name"].string
+                let marker   = GMSMarker(position: CLLocationCoordinate2D(latitude: placeLat, longitude: placeLng))
+                marker.title   = place["name"].string
                 marker.snippet = place["formatted_address"].string
-                marker.map = mapView
+                marker.map     = mapView
             }
             let camera = GMSCameraPosition.camera(withTarget: location, zoom: Float(self.getAppreciateZoomSize(distance: range)))
             self.mapView.camera = camera
