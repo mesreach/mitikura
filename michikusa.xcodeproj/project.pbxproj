@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F80CD789D419FA883C0019B /* Pods_michikusaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD0765B2DCF0A6226143079 /* Pods_michikusaTests.framework */; };
+		438AA11720D6520E002B993C /* hp-simplified-556.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 438AA11620D6520D002B993C /* hp-simplified-556.ttf */; };
 		52994E85169AB5470210BC85 /* Pods_michikusaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86890197DC8F67BCF28CF386 /* Pods_michikusaUITests.framework */; };
 		6461C56F205E288B00ADE3BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C56E205E288B00ADE3BE /* AppDelegate.swift */; };
 		6461C571205E288B00ADE3BE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6461C570205E288B00ADE3BE /* MainViewController.swift */; };
@@ -46,6 +47,7 @@
 		0696C07DC06679D1E94A3CAF /* Pods-michikusaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-michikusaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-michikusaUITests/Pods-michikusaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0CD0765B2DCF0A6226143079 /* Pods_michikusaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_michikusaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0E719D36DB05431033C329 /* Pods-michikusa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-michikusa.debug.xcconfig"; path = "Pods/Target Support Files/Pods-michikusa/Pods-michikusa.debug.xcconfig"; sourceTree = "<group>"; };
+		438AA11620D6520D002B993C /* hp-simplified-556.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hp-simplified-556.ttf"; sourceTree = "<group>"; };
 		5AF5B77D3220271D7FF74CA6 /* Pods_michikusa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_michikusa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6461C56B205E288B00ADE3BE /* michikusa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = michikusa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6461C56E205E288B00ADE3BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				6461C575205E288B00ADE3BE /* Assets.xcassets */,
 				6461C577205E288B00ADE3BE /* LaunchScreen.storyboard */,
 				6461C57A205E288B00ADE3BE /* Info.plist */,
+				438AA11620D6520D002B993C /* hp-simplified-556.ttf */,
 			);
 			path = michikusa;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6461C579205E288B00ADE3BE /* LaunchScreen.storyboard in Resources */,
+				438AA11720D6520E002B993C /* hp-simplified-556.ttf in Resources */,
 				6461C576205E288B00ADE3BE /* Assets.xcassets in Resources */,
 				6461C574205E288B00ADE3BE /* Main.storyboard in Resources */,
 			);
