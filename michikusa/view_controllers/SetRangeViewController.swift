@@ -60,6 +60,7 @@ class SetRangeViewController: UIViewController {
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
         next.michikusaType = self.michikusaType.textStore
+        next.previousPolyLine = self.previousPolyLine
         self.present(next, animated: true, completion: nil)
         
     }
