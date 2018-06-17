@@ -201,10 +201,10 @@
             </objects>
             <point key="canvasLocation" x="909.60000000000002" y="107.49625187406298"/>
         </scene>
-        <!--Range And Genre View Controller-->
+        <!--Set Range View Controller-->
         <scene sceneID="U5r-YN-8fr">
             <objects>
-                <viewController storyboardIdentifier="RangeAndGenre" id="l43-uo-pLp" customClass="RangeAndGenreViewController" customModule="michikusa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetRange" id="l43-uo-pLp" customClass="SetRangeViewController" customModule="michikusa" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cv8-Sf-LNW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,7 +217,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Range And Genre Michikusa" id="vSj-0G-fOe">
+                                    <navigationItem title="Set Range Michikusa" id="vSj-0G-fOe">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="NTn-8T-KPA">
                                             <connections>
                                                 <action selector="goBack:" destination="l43-uo-pLp" id="EOr-Kb-mhJ"/>
@@ -233,21 +233,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="道草ジャンルは？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-E3-hca">
-                                <rect key="frame" x="149" y="474" width="139" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-vy-6Ki">
-                                <rect key="frame" x="157" y="565" width="123" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="道草候補を表示！"/>
-                                <connections>
-                                    <action selector="goNext_:" destination="l43-uo-pLp" eventType="touchUpInside" id="TpA-Gs-HAc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="km 以内" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgk-Ut-QjL">
                                 <rect key="frame" x="241" y="418" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -260,11 +245,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIt-8B-vh3" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
-                                <rect key="frame" x="98" y="509" width="240" height="39"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
+                                <rect key="frame" x="59" y="520" width="256" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="道草ジャンルは？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-E3-hca">
+                                <rect key="frame" x="130" y="491" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-vy-6Ki">
+                                <rect key="frame" x="138" y="583" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="道草候補を表示！"/>
+                                <connections>
+                                    <action selector="goNext_:" destination="l43-uo-pLp" eventType="touchUpInside" id="TpA-Gs-HAc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -276,7 +276,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="4QS-zV-exR" id="7j4-Ix-oLw"/>
-                        <outlet property="picker_genre" destination="qIt-8B-vh3" id="bjV-0y-8za"/>
+                        <outlet property="michikusaType" destination="6Ez-w6-sCa" id="h0n-1N-n9I"/>
                         <outlet property="picker_km" destination="tTL-fs-3Y0" id="zJC-mN-msh"/>
                     </connections>
                 </viewController>
@@ -292,16 +292,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C76-FG-Jim">
-                                <rect key="frame" x="153" y="559" width="81" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ここへ道草!"/>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
-                                <rect key="frame" x="59" y="504" width="256" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mQf-Bz-Hzc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -315,11 +305,22 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZw-AA-UZi" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="437" height="521"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C76-FG-Jim">
+                                <rect key="frame" x="147" y="592" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ここへ道草!"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kzk-fg-bgy"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="AZw-AA-UZi" id="ZLy-UR-UjN"/>
                         <outlet property="michikusaSpot" destination="6Ez-w6-sCa" id="fem-rr-GIb"/>
                     </connections>
                 </viewController>

@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
     var destDuration: Double = 0
     var destDistance: Double = 0
     var polyline: GMSPolyline?
+    var mutablePath: GMSMutablePath?
 
     var data: [GMSAutocompletePrediction] = []
     
@@ -111,6 +112,7 @@ class MainViewController: UIViewController {
         next.previousCamera = self.mapView.camera
         next.previousDestDuration = self.destDuration
         next.previousDestDistance = self.destDistance
+        next.originalMutablePath = self.mutablePath
         
         self.present(next, animated: true, completion: nil)
     }
@@ -332,6 +334,9 @@ extension MainViewController: CLLocationManagerDelegate {
                 let routeOverviewPolyline = route["overview_polyline"].dictionary
                 let points = routeOverviewPolyline?["points"]?.stringValue
                 let path = GMSPath(fromEncodedPath: points!)
+                
+                self.mutablePath = GMSMutablePath(path: path!)
+
                 self.polyline = GMSPolyline(path: path)
                 let legs = route["legs"].arrayValue.last
                 distance = (legs!["distance"].dictionary?["value"]?.doubleValue)!
@@ -369,11 +374,11 @@ extension MainViewController: CLLocationManagerDelegate {
         case 1..<1000:
             return 16
         case 1000..<5000:
-            return 13
+            return 14
         case 5000..<10000:
-            return 11
+            return 13
         case 10000..<20000:
-            return 10
+            return 12
         case 20000..<50000:
             return 7
         case 50000..<1000000000000:

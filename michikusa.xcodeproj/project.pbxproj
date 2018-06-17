@@ -20,7 +20,7 @@
 		648F48E620A08E990059EC9F /* MultiSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648F48E520A08E990059EC9F /* MultiSlider.swift */; };
 		64C14C2620A1C845008A85D9 /* SearchMichikusaDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C14C2520A1C845008A85D9 /* SearchMichikusaDecorator.swift */; };
 		64CB87542078B29000B13FE9 /* SearchMichukusaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87532078B29000B13FE9 /* SearchMichukusaViewController.swift */; };
-		64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */; };
+		64CB87562078B5F000B13FE9 /* SetRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87552078B5F000B13FE9 /* SetRangeViewController.swift */; };
 		64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */; };
 		CFBAFC9EA829858DFDBA91CE /* Pods_michikusa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF5B77D3220271D7FF74CA6 /* Pods_michikusa.framework */; };
 /* End PBXBuildFile section */
@@ -64,7 +64,7 @@
 		648F48E520A08E990059EC9F /* MultiSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSlider.swift; sourceTree = "<group>"; };
 		64C14C2520A1C845008A85D9 /* SearchMichikusaDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMichikusaDecorator.swift; sourceTree = "<group>"; };
 		64CB87532078B29000B13FE9 /* SearchMichukusaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMichukusaViewController.swift; sourceTree = "<group>"; };
-		64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeAndGenreViewController.swift; sourceTree = "<group>"; };
+		64CB87552078B5F000B13FE9 /* SetRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetRangeViewController.swift; sourceTree = "<group>"; };
 		64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMichikusaViewController.swift; sourceTree = "<group>"; };
 		6A4E70FE0E2611A7FCA31F90 /* Pods-michikusaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-michikusaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-michikusaTests/Pods-michikusaTests.release.xcconfig"; sourceTree = "<group>"; };
 		7E002ACF6704673D31284A7E /* Pods-michikusa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-michikusa.release.xcconfig"; path = "Pods/Target Support Files/Pods-michikusa/Pods-michikusa.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				64CB87532078B29000B13FE9 /* SearchMichukusaViewController.swift */,
-				64CB87552078B5F000B13FE9 /* RangeAndGenreViewController.swift */,
+				64CB87552078B5F000B13FE9 /* SetRangeViewController.swift */,
 				64CB87572078B79900B13FE9 /* SelectMichikusaViewController.swift */,
 				6461C570205E288B00ADE3BE /* MainViewController.swift */,
 			);
@@ -517,7 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64C14C2620A1C845008A85D9 /* SearchMichikusaDecorator.swift in Sources */,
-				64CB87562078B5F000B13FE9 /* RangeAndGenreViewController.swift in Sources */,
+				64CB87562078B5F000B13FE9 /* SetRangeViewController.swift in Sources */,
 				6461C571205E288B00ADE3BE /* MainViewController.swift in Sources */,
 				64CB87582078B79900B13FE9 /* SelectMichikusaViewController.swift in Sources */,
 				648F48E620A08E990059EC9F /* MultiSlider.swift in Sources */,
