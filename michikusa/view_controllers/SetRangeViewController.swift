@@ -13,6 +13,8 @@ class SetRangeViewController: UIViewController {
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
     var previousLimitPolyLine: GMSPolyline?
+    var previousCOG2d: CLLocationCoordinate2D?
+    var previousCOGRadius: Int?
     var typeList:[String] = ["cafe","store","bar","park","museum"]
     @IBOutlet weak var picker_km: PickerKeyboard!
     
@@ -59,7 +61,11 @@ class SetRangeViewController: UIViewController {
         next.michikusaRange = Int(picker_km.textStore)!
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
+        next.previousLimitPolyLine = self.previousLimitPolyLine
+        next.previousPolyLine = self.previousPolyLine
         next.michikusaType = self.michikusaType.textStore
+        next.cog2d = self.previousCOG2d
+        next.previousCOGRadius = self.previousCOGRadius
         self.present(next, animated: true, completion: nil)
         
     }
