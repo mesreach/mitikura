@@ -32,9 +32,9 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="findMichikusaButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSY-Zi-jOm" userLabel="Button" customClass="RaisedButton" customModule="Material">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="findMichikusaButton" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSY-Zi-jOm" userLabel="Button" customClass="RaisedButton" customModule="Material">
                                 <rect key="frame" x="87" y="543" width="200" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.52156862745098043" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23929353495960093" green="0.55212960025380708" blue="0.20312522518752074" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Xlx-LX-81X"/>
                                 </constraints>
@@ -194,6 +194,11 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ZC-KC-z6h" customClass="RangeSlider" customModule="michikusa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="511" width="367" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -211,6 +216,7 @@
                         <outlet property="endKM" destination="e93-LD-S3w" id="GZt-wR-H1I"/>
                         <outlet property="endTM" destination="lCB-Ha-gc6" id="31C-yD-BDw"/>
                         <outlet property="mapView" destination="X0t-xw-EMO" id="hbD-h5-Yq4"/>
+                        <outlet property="rangeSlider" destination="3ZC-KC-z6h" id="55M-Ni-ddV"/>
                         <outlet property="startKM" destination="Dkb-3Y-8dB" id="dhI-0K-myy"/>
                         <outlet property="startTM" destination="9hF-YG-cBL" id="gTe-HR-L88"/>
                     </connections>

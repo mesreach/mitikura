@@ -39,6 +39,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.findMichikusaButton.alpha = 0.2
+
         // Location Manager Settings
         self.locationManager = CLLocationManager()
         self.locationManager.delegate = self
@@ -163,6 +165,8 @@ extension MainViewController: UISearchBarDelegate {
         if let tmp = self.card {
             tmp.removeFromSuperview()
         }
+        self.findMichikusaButton.isEnabled = false
+        self.findMichikusaButton.alpha = 0.2
     }
 }
 
@@ -239,6 +243,8 @@ extension MainViewController {
             self.mapView.animate(to: camera)
             self.displayPlaceDetailed(place: place, marker: self.dstMarker!)
         })
+        self.findMichikusaButton.isEnabled = true
+        self.findMichikusaButton.alpha = 1.0
     }
     
     func displayPlaceDetailed(place: GMSPlace, marker: GMSMarker) -> Void {

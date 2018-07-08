@@ -17,7 +17,7 @@ class SearchMichukusaViewController: UIViewController {
     var originalMutablePath: GMSMutablePath?
     var limitPolyLine: GMSPolyline?
     var cogRadius: Int?
-    let rangeSlider = RangeSlider(frame: CGRect.zero)
+    @IBOutlet weak var rangeSlider: RangeSlider!
     var cog2d: CLLocationCoordinate2D?
     var currentLocation: CLLocationCoordinate2D?
     var destLocation: CLLocationCoordinate2D!
