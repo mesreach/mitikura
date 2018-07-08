@@ -16,7 +16,11 @@ class SearchMichukusaViewController: UIViewController {
     var limitMutablePath: GMSMutablePath?
     var originalMutablePath: GMSMutablePath?
     var limitPolyLine: GMSPolyline?
+    var cogRadius: Int?
     let rangeSlider = RangeSlider(frame: CGRect.zero)
+    var cog2d: CLLocationCoordinate2D?
+    var currentLocation: CLLocationCoordinate2D?
+    var destLocation: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +78,24 @@ class SearchMichukusaViewController: UIViewController {
         self.limitMutablePath = self.originalMutablePath?.mutableCopy() as? GMSMutablePath
         Array(0..<lstartno).forEach { i in self.limitMutablePath?.removeCoordinate(at: 0) }
         Array((lendno - lstartno)..<(Int(count) - lstartno)).forEach { i in self.limitMutablePath?.removeLastCoordinate() }
+        let start2d: CLLocationCoordinate2D = (limitMutablePath?.coordinate(at: 0))!
+        let end2d: CLLocationCoordinate2D = (limitMutablePath?.coordinate(at: (limitMutablePath?.count())! - 1))!
+        let mid2d: CLLocationCoordinate2D = (limitMutablePath?.coordinate(at: (limitMutablePath?.count())!/2 - 1))!
+        
+        let cog2d_lat = (start2d.latitude + mid2d.latitude + end2d.latitude) / 3
+        let cog2d_long = (start2d.longitude + mid2d.longitude + end2d.longitude) / 3
+        self.cog2d = CLLocationCoordinate2D(latitude: cog2d_lat, longitude: cog2d_long)
+        
+        let arry2d = [start2d, mid2d, end2d]
+        let arryDistance = arry2d.map { a  in
+            CLLocation.distance(from: a, to: cog2d!)
+        }
+        print(arryDistance)
+        let maxDistance = arryDistance.max()
+        print("maxDistance: \(maxDistance)")
+        
+        self.cogRadius = Int(maxDistance!)
+        
         self.limitPolyLine = GMSPolyline(path: self.limitMutablePath)
         self.limitPolyLine?.strokeWidth = 6
         self.limitPolyLine?.strokeColor = UIColor.red
@@ -105,6 +127,25 @@ class SearchMichukusaViewController: UIViewController {
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
         next.previousLimitPolyLine = self.limitPolyLine
+        next.previousCOG2d = self.cog2d
+        next.previousCOGRadius = self.cogRadius
+        next.currentLocation = self.currentLocation
+        next.destLocation = self.destLocation
         self.present(next, animated: true, completion: nil)
+    }
+}
+
+extension CLLocation {
+    
+    /// Get distance between two points
+    ///
+    /// - Parameters:
+    ///   - from: first point
+    ///   - to: second point
+    /// - Returns: the distance in meters
+    class func distance(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> CLLocationDistance {
+        let from = CLLocation(latitude: from.latitude, longitude: from.longitude)
+        let to = CLLocation(latitude: to.latitude, longitude: to.longitude)
+        return from.distance(from: to)
     }
 }

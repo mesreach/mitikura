@@ -113,7 +113,8 @@ class MainViewController: UIViewController {
         next.previousDestDuration = self.destDuration
         next.previousDestDistance = self.destDistance
         next.originalMutablePath = self.mutablePath
-        
+        next.currentLocation = self.currentLocation
+        next.destLocation = self.destLocation
         self.present(next, animated: true, completion: nil)
     }
 }

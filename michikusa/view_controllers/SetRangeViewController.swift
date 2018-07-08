@@ -13,7 +13,12 @@ class SetRangeViewController: UIViewController {
     var previousCamera: GMSCameraPosition?
     var previousMarker: GMSMarker?
     var previousLimitPolyLine: GMSPolyline?
+    var previousCOG2d: CLLocationCoordinate2D?
+    var previousCOGRadius: Int?
     var typeList:[String] = ["cafe","store","bar","park","museum"]
+    var currentLocation: CLLocationCoordinate2D?
+    var destLocation: CLLocationCoordinate2D!
+
     @IBOutlet weak var picker_km: PickerKeyboard!
     
     override func viewDidLoad() {
@@ -59,7 +64,13 @@ class SetRangeViewController: UIViewController {
         next.michikusaRange = Int(picker_km.textStore)!
         next.previousMarker = self.previousMarker
         next.previousCamera = self.mapView.camera
+        next.previousLimitPolyLine = self.previousLimitPolyLine
+        next.previousPolyLine = self.previousPolyLine
         next.michikusaType = self.michikusaType.textStore
+        next.cog2d = self.previousCOG2d
+        next.previousCOGRadius = self.previousCOGRadius
+        next.currentLocation = self.currentLocation
+        next.destLocation = self.destLocation
         self.present(next, animated: true, completion: nil)
         
     }
@@ -79,20 +90,12 @@ class SetRangeViewController: UIViewController {
     }
     
     func drawMichikusaRange(_ range_m_radius: Int) {
-        var p: CLLocationCoordinate2D
-        let count = (self.previousLimitPolyLine?.path?.count())!
         self.mapView.clear()
         drawMap()
 
-        let v = UInt(self.picker_km.textStore)! * 3
-        for i in 0..<count {
-            if i % v == 0 {
-                p = (self.previousLimitPolyLine?.path?.coordinate(at: i))!
-                let c = GMSCircle(position: p, radius: CLLocationDistance(range_m_radius))
-                c.fillColor = UIColor.red.withAlphaComponent(0.1)
-                c.strokeColor = UIColor.red.withAlphaComponent(0.1)
-                c.map = self.mapView
-            }
-        }
+        let c: GMSCircle = GMSCircle(position: self.previousCOG2d!, radius: CLLocationDistance(self.previousCOGRadius! + range_m_radius))
+        c.map = self.mapView
+        c.fillColor = UIColor.red.withAlphaComponent(0.1)
+        c.strokeColor = UIColor.red.withAlphaComponent(0.1)
     }
 }
