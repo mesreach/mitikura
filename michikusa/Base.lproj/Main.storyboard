@@ -256,60 +256,76 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Renge of MICHIKUSA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDf-hK-KxG">
-                                <rect key="frame" x="157" y="371" width="148" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgk-Ut-QjL">
-                                <rect key="frame" x="241" y="418" width="63" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTL-fs-3Y0" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
-                                <rect key="frame" x="108" y="412" width="125" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
-                                <rect key="frame" x="59" y="520" width="256" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Genre of MICHIKUSA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-E3-hca">
-                                <rect key="frame" x="130" y="491" width="145" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-vy-6Ki">
-                                <rect key="frame" x="111.5" y="584" width="152" height="32"/>
-                                <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
-                                <state key="normal" title="View the candidates!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="goNext_:" destination="l43-uo-pLp" eventType="touchUpInside" id="TpA-Gs-HAc"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Within" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-po-YbU">
-                                <rect key="frame" x="59" y="422" width="63" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="879-eo-m58">
+                                <rect key="frame" x="0.0" y="397.5" width="375" height="269.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Renge of MICHIKUSA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDf-hK-KxG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <color key="backgroundColor" red="0.54033201429720312" green="0.57891756296157837" blue="0.09645709323733237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xKl-xk-Ohv">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="46"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Within" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-po-YbU">
+                                                <rect key="frame" x="0.0" y="0.0" width="125" height="46"/>
+                                                <color key="backgroundColor" red="0.94542199373245239" green="0.49677896499633789" blue="0.18941789865493774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTL-fs-3Y0" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
+                                                <rect key="frame" x="125" y="0.0" width="125" height="46"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="km" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgk-Ut-QjL">
+                                                <rect key="frame" x="250" y="0.0" width="125" height="46"/>
+                                                <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Genre of MICHIKUSA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-E3-hca">
+                                        <rect key="frame" x="0.0" y="112" width="375" height="45.5"/>
+                                        <color key="backgroundColor" red="0.11913711577653885" green="0.18020164966583252" blue="0.64880269765853882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="167.5" width="375" height="46"/>
+                                        <color key="backgroundColor" red="0.94542199373245239" green="0.49677896499633789" blue="0.18941789865493774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-vy-6Ki">
+                                        <rect key="frame" x="0.0" y="223.5" width="375" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="5kw-gX-1Kw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
+                                        <state key="normal" title="View the candidates!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goNext_:" destination="l43-uo-pLp" eventType="touchUpInside" id="TpA-Gs-HAc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jDf-hK-KxG" firstAttribute="centerX" secondItem="879-eo-m58" secondAttribute="centerX" id="2Fd-IV-xzM"/>
+                                    <constraint firstItem="1jA-E3-hca" firstAttribute="centerX" secondItem="879-eo-m58" secondAttribute="centerX" id="S69-RT-iZ8"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="879-eo-m58" secondAttribute="bottom" id="4Iy-2h-7Vi"/>
+                            <constraint firstItem="879-eo-m58" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="FlZ-nz-SGM"/>
+                            <constraint firstItem="879-eo-m58" firstAttribute="top" secondItem="4QS-zV-exR" secondAttribute="bottom" id="Vt7-Sw-f8d"/>
                             <constraint firstItem="VXS-Zz-10T" firstAttribute="top" secondItem="r4x-3G-McW" secondAttribute="top" id="Vw8-SA-1ye"/>
-                            <constraint firstItem="3SA-vy-6Ki" firstAttribute="centerX" secondItem="cv8-Sf-LNW" secondAttribute="centerX" id="ZEd-PT-bD1"/>
                             <constraint firstItem="4QS-zV-exR" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="dUk-m6-hhR"/>
                             <constraint firstItem="VXS-Zz-10T" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="k7i-2t-rq6"/>
                             <constraint firstItem="4QS-zV-exR" firstAttribute="top" secondItem="VXS-Zz-10T" secondAttribute="bottom" id="sdu-84-Vmg"/>
@@ -356,10 +372,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C76-FG-Jim">
-                                <rect key="frame" x="119" y="594" width="141" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C76-FG-Jim">
+                                <rect key="frame" x="87.5" y="605" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="crd-8p-RVs"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
                                 <state key="normal" title="MICHIKUSA to here!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -372,10 +390,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AZw-AA-UZi" firstAttribute="width" secondItem="6Fh-4F-28j" secondAttribute="width" id="Khc-h8-HQr"/>
+                            <constraint firstItem="Kzk-fg-bgy" firstAttribute="bottom" secondItem="C76-FG-Jim" secondAttribute="bottom" constant="30" id="MKJ-J7-vpK"/>
                             <constraint firstItem="mQf-Bz-Hzc" firstAttribute="top" secondItem="Kzk-fg-bgy" secondAttribute="top" id="PDe-A3-z2p"/>
                             <constraint firstItem="AZw-AA-UZi" firstAttribute="height" secondItem="6Fh-4F-28j" secondAttribute="height" id="Qao-dy-Rr8"/>
                             <constraint firstItem="mQf-Bz-Hzc" firstAttribute="width" secondItem="6Fh-4F-28j" secondAttribute="width" id="XHL-gr-ujB"/>
                             <constraint firstItem="AZw-AA-UZi" firstAttribute="top" secondItem="mQf-Bz-Hzc" secondAttribute="bottom" id="fTa-yY-KL1"/>
+                            <constraint firstItem="C76-FG-Jim" firstAttribute="centerX" secondItem="6Fh-4F-28j" secondAttribute="centerX" id="gxs-9T-qZz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kzk-fg-bgy"/>
                     </view>
@@ -417,10 +437,12 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chL-tv-ikL">
-                                <rect key="frame" x="111" y="602" width="159" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chL-tv-ikL">
+                                <rect key="frame" x="87.5" y="605" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="eZ7-iQ-Nzg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
                                 <state key="normal" title="Open the Google Map!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -434,6 +456,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qUT-AH-zMB" firstAttribute="width" secondItem="LLN-BW-Mcy" secondAttribute="width" id="4SC-5i-fHd"/>
+                            <constraint firstItem="chL-tv-ikL" firstAttribute="centerX" secondItem="LLN-BW-Mcy" secondAttribute="centerX" id="MvK-Jl-V33"/>
+                            <constraint firstItem="QtH-cI-mfh" firstAttribute="bottom" secondItem="chL-tv-ikL" secondAttribute="bottom" constant="30" id="Yun-0k-YP0"/>
                             <constraint firstItem="bFw-5Z-kCJ" firstAttribute="height" secondItem="LLN-BW-Mcy" secondAttribute="height" id="aDr-Ua-jag"/>
                             <constraint firstItem="QtH-cI-mfh" firstAttribute="top" secondItem="qUT-AH-zMB" secondAttribute="top" id="c5H-TM-Gs0"/>
                             <constraint firstItem="bFw-5Z-kCJ" firstAttribute="top" secondItem="qUT-AH-zMB" secondAttribute="bottom" id="ndG-ad-uD0"/>
