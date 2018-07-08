@@ -306,8 +306,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mQf-Bz-Hzc">
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZw-AA-UZi" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="362"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mQf-Bz-Hzc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Select Michikusa" id="17X-EH-hDE">
                                         <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="HWD-t6-YlL">
@@ -326,16 +332,8 @@
                                     <action selector="goNext_:" destination="0d2-Ju-2tI" eventType="touchUpInside" id="5xd-FW-rZI"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZw-AA-UZi" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="63" width="437" height="521"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="mQf-Bz-Hzc" firstAttribute="top" secondItem="6Fh-4F-28j" secondAttribute="top" constant="20" id="iUr-1U-0On"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Kzk-fg-bgy"/>
                     </view>
                     <connections>
