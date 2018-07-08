@@ -15,9 +15,15 @@ class SelectMichikusaViewController: UIViewController {
     var previousLimitPolyLine: GMSPolyline?
     var previousCOGRadius: Int?
     var cog2d: CLLocationCoordinate2D?
+    var selectedMarker: GMSMarker?
+    var defaultIcon: UIImage?
+    var currentLocation: CLLocationCoordinate2D?
+    var destLocation: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mapView.delegate = self
+
         if let tmp = self.previousCamera {
             self.mapView.camera = tmp
         }
@@ -45,9 +51,18 @@ class SelectMichikusaViewController: UIViewController {
     @IBAction func goBack(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func goNext_(_ sender: UIButton) {
+        let next = storyboard!.instantiateViewController(withIdentifier: "confirmMichikusaView") as! ConfirmMichikusaViewController
+        next.previousCamera = self.mapView.camera
+        next.michikusaType = self.michikusaType
+        next.selectedMarker = self.selectedMarker
+        next.currentLocation = self.currentLocation
+        next.destLocation = self.destLocation
+        self.present(next, animated: true, completion: nil)
+    }
     
     func getPlaceList (location: CLLocationCoordinate2D, radius: Int, range: Int, type: String, mapView: GMSMapView) {
-        print(range)
         let centerPoint = "\(location.latitude),\(location.longitude)"
         let radius: Double = Double(radius)
         let key = "AIzaSyB2VMdWQslynrxRgCA3vpWQAjqxvkKmCWk"
@@ -69,8 +84,6 @@ class SelectMichikusaViewController: UIViewController {
                     marker.icon = GMSMarker.markerImage(with: .black)
                 }
             }
-            //let camera = GMSCameraPosition.camera(withTarget: location, zoom: Float(self.getAppreciateZoomSize(distance: range)))
-            //self.mapView.camera = camera
         }
     }
     
@@ -111,5 +124,18 @@ class SelectMichikusaViewController: UIViewController {
         if self.previousLimitPolyLine != nil {
             self.previousLimitPolyLine!.map = self.mapView
         }
+    }
+}
+
+extension SelectMichikusaViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        if self.selectedMarker != nil {
+            self.selectedMarker?.icon = self.defaultIcon
+        }
+        self.selectedMarker = marker
+        self.defaultIcon = self.selectedMarker?.icon
+
+        marker.icon = GMSMarker.markerImage(with: .blue)
+        return false
     }
 }

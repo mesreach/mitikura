@@ -19,6 +19,8 @@ class SearchMichukusaViewController: UIViewController {
     var cogRadius: Int?
     let rangeSlider = RangeSlider(frame: CGRect.zero)
     var cog2d: CLLocationCoordinate2D?
+    var currentLocation: CLLocationCoordinate2D?
+    var destLocation: CLLocationCoordinate2D!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,6 +129,8 @@ class SearchMichukusaViewController: UIViewController {
         next.previousLimitPolyLine = self.limitPolyLine
         next.previousCOG2d = self.cog2d
         next.previousCOGRadius = self.cogRadius
+        next.currentLocation = self.currentLocation
+        next.destLocation = self.destLocation
         self.present(next, animated: true, completion: nil)
     }
 }
