@@ -86,6 +86,17 @@ class RangeSlider: UIControl {
     
     required init(coder: NSCoder) {
         super.init(coder: coder)!
+        trackLayer.rangeSlider = self
+        trackLayer.contentsScale = UIScreen.main.scale
+        layer.addSublayer(trackLayer)
+        
+        lowerThumbLayer.rangeSlider = self
+        lowerThumbLayer.contentsScale = UIScreen.main.scale
+        layer.addSublayer(lowerThumbLayer)
+        
+        upperThumbLayer.rangeSlider = self
+        upperThumbLayer.contentsScale = UIScreen.main.scale
+        layer.addSublayer(upperThumbLayer)
     }
     
     func updateLayerFrames() {

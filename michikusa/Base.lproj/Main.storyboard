@@ -196,6 +196,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <view opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ZC-KC-z6h" customClass="RangeSlider" customModule="michikusa" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="511" width="367" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -213,6 +218,7 @@
                         <outlet property="endKM" destination="e93-LD-S3w" id="GZt-wR-H1I"/>
                         <outlet property="endTM" destination="lCB-Ha-gc6" id="31C-yD-BDw"/>
                         <outlet property="mapView" destination="X0t-xw-EMO" id="hbD-h5-Yq4"/>
+                        <outlet property="rangeSlider" destination="3ZC-KC-z6h" id="55M-Ni-ddV"/>
                         <outlet property="startKM" destination="Dkb-3Y-8dB" id="dhI-0K-myy"/>
                         <outlet property="startTM" destination="9hF-YG-cBL" id="gTe-HR-L88"/>
                     </connections>
