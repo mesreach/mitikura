@@ -261,9 +261,8 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Renge of MICHIKUSA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDf-hK-KxG">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
-                                        <color key="backgroundColor" red="0.54033201429720312" green="0.57891756296157837" blue="0.09645709323733237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xKl-xk-Ohv">
@@ -271,7 +270,6 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Within" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-po-YbU">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="46"/>
-                                                <color key="backgroundColor" red="0.94542199373245239" green="0.49677896499633789" blue="0.18941789865493774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -290,14 +288,12 @@
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Genre of MICHIKUSA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jA-E3-hca">
                                         <rect key="frame" x="0.0" y="112" width="375" height="45.5"/>
-                                        <color key="backgroundColor" red="0.11913711577653885" green="0.18020164966583252" blue="0.64880269765853882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HPSimplified-Bold" family="HP Simplified" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="167.5" width="375" height="46"/>
-                                        <color key="backgroundColor" red="0.94542199373245239" green="0.49677896499633789" blue="0.18941789865493774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-vy-6Ki">
                                         <rect key="frame" x="0.0" y="223.5" width="375" height="46"/>
@@ -317,6 +313,8 @@
                                 <constraints>
                                     <constraint firstItem="jDf-hK-KxG" firstAttribute="centerX" secondItem="879-eo-m58" secondAttribute="centerX" id="2Fd-IV-xzM"/>
                                     <constraint firstItem="1jA-E3-hca" firstAttribute="centerX" secondItem="879-eo-m58" secondAttribute="centerX" id="S69-RT-iZ8"/>
+                                    <constraint firstItem="6Ez-w6-sCa" firstAttribute="centerX" secondItem="879-eo-m58" secondAttribute="centerX" id="YcS-66-5Xe"/>
+                                    <constraint firstItem="6Ez-w6-sCa" firstAttribute="top" secondItem="1jA-E3-hca" secondAttribute="bottom" constant="10" id="gE0-l9-zWc"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -326,6 +324,7 @@
                             <constraint firstItem="879-eo-m58" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="FlZ-nz-SGM"/>
                             <constraint firstItem="879-eo-m58" firstAttribute="top" secondItem="4QS-zV-exR" secondAttribute="bottom" id="Vt7-Sw-f8d"/>
                             <constraint firstItem="VXS-Zz-10T" firstAttribute="top" secondItem="r4x-3G-McW" secondAttribute="top" id="Vw8-SA-1ye"/>
+                            <constraint firstItem="6Ez-w6-sCa" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" multiplier="0.33" id="WqG-gz-bV6"/>
                             <constraint firstItem="4QS-zV-exR" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="dUk-m6-hhR"/>
                             <constraint firstItem="VXS-Zz-10T" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="k7i-2t-rq6"/>
                             <constraint firstItem="4QS-zV-exR" firstAttribute="top" secondItem="VXS-Zz-10T" secondAttribute="bottom" id="sdu-84-Vmg"/>
