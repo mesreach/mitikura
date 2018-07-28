@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -294,6 +294,7 @@
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-w6-sCa" customClass="PickerKeyboard" customModule="michikusa" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="167.5" width="375" height="46"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3SA-vy-6Ki">
                                         <rect key="frame" x="0.0" y="223.5" width="375" height="46"/>
@@ -324,7 +325,6 @@
                             <constraint firstItem="879-eo-m58" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="FlZ-nz-SGM"/>
                             <constraint firstItem="879-eo-m58" firstAttribute="top" secondItem="4QS-zV-exR" secondAttribute="bottom" id="Vt7-Sw-f8d"/>
                             <constraint firstItem="VXS-Zz-10T" firstAttribute="top" secondItem="r4x-3G-McW" secondAttribute="top" id="Vw8-SA-1ye"/>
-                            <constraint firstItem="6Ez-w6-sCa" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" multiplier="0.33" id="WqG-gz-bV6"/>
                             <constraint firstItem="4QS-zV-exR" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="dUk-m6-hhR"/>
                             <constraint firstItem="VXS-Zz-10T" firstAttribute="width" secondItem="cv8-Sf-LNW" secondAttribute="width" id="k7i-2t-rq6"/>
                             <constraint firstItem="4QS-zV-exR" firstAttribute="top" secondItem="VXS-Zz-10T" secondAttribute="bottom" id="sdu-84-Vmg"/>
